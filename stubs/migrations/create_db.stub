@@ -1,0 +1,26 @@
+{{{
+  exports({
+    to: app.makePath('database', 'migrations', prefix + '_create_cache_table.ts')
+  })
+}}}
+import { BaseSchema } from '@adonisjs/lucid/schema'
+import config from "@adonisjs/core/services/config";
+
+export default class extends BaseSchema {
+
+  async up() {
+    this.schema.createTable('cache', (table) => {
+      table.increments('id')
+
+      table.string('key').unique()
+      table.string('value')
+
+      table.timestamp('created_at', { useTz: true })
+      table.timestamp('updated_at', { useTz: true })
+    })
+  }
+
+  async down() {
+    this.schema.dropTable('cache')
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "name": "boilerplate",
+  "name": "@holoyan/cache-demo-pkg",
   "description": "",
   "version": "0.0.0",
   "engines": {
@@ -17,7 +17,8 @@
   ],
   "exports": {
     ".": "./build/index.js",
-    "./types": "./build/src/types.js"
+    "./types": "./build/src/types.js",
+    "./cache_provider": "./build/providers/cache_provider.js"
   },
   "scripts": {
     "clean": "del-cli build",
@@ -48,11 +49,13 @@
     "@japa/assert": "^2.1.0",
     "@japa/runner": "^3.1.1",
     "@swc/core": "^1.4.6",
+    "@types/luxon": "^3.4.2",
     "@types/node": "^20.11.25",
     "c8": "^9.1.0",
     "copyfiles": "^2.4.1",
     "del-cli": "^5.1.0",
     "eslint": "^8.57.0",
+    "luxon": "^3.4.4",
     "np": "^10.0.0",
     "prettier": "^3.2.5",
     "ts-node": "^10.9.2",
@@ -60,7 +63,8 @@
   },
   "peerDependencies": {
     "@adonisjs/core": "^6.2.0",
-    "@adonisjs/lucid": "^20.5.1"
+    "@adonisjs/lucid": "^20.5.1",
+    "luxon": "^3.4.4"
   },
   "publishConfig": {
     "access": "public",
